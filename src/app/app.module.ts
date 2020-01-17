@@ -3,24 +3,30 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InstructorComponent } from './instructor/instructor.component';
-import { InstructorProfilComponent } from './instructor/instructor-profil/instructor-profil.component';
-import { InstructorDetailComponent } from './instructor/instructor-detail/instructor-detail.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import  { appRoutes } from './routerConfig';
+import { InstructorComponent } from './navbar/instructor/instructor.component';
+import { StudentComponent } from './navbar/student/student.component';
+import { CoursesComponent } from './navbar/courses/courses.component';
+import { MaterialsComponent } from './navbar/materials/materials.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FreeApiService } from './service/backend.api';
 
 @NgModule({
   declarations: [
     AppComponent,
     InstructorComponent,
-    InstructorProfilComponent,
-    InstructorDetailComponent,
-    NavbarComponent
+    StudentComponent,
+    CoursesComponent,
+    MaterialsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [FreeApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
