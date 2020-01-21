@@ -11,6 +11,7 @@ import { CoursesComponent } from './navbar/courses/courses.component';
 import { MaterialsComponent } from './navbar/materials/materials.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FreeApiService } from './service/backend.api';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,12 @@ import { FreeApiService } from './service/backend.api';
     InstructorComponent,
     StudentComponent,
     CoursesComponent,
-    MaterialsComponent
+    MaterialsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],

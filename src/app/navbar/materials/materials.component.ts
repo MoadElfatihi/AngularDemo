@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialsComponent implements OnInit {
 
+  home : boolean = true;
   constructor() { }
 
   ngOnInit() {

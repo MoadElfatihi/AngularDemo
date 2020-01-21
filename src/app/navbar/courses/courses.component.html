@@ -1,1 +1,17 @@
 <p>courses works!</p>
+
+<input type="text" [value]="title" 
+(input)="updateValue($event)"/>
+{{title}}
+
+<input type="text" [(ngModel)]="title"/>
+<table>
+    <thead>
+        <th>id course</th>
+        <th>course title</th>
+    </thead>
+    <tr *ngFor="let course of courses">
+        <td>{{course.id}}</td>
+        <td>{{course.title}}</td>
+    </tr>
+</table>
